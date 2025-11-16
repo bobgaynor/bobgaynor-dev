@@ -23,6 +23,7 @@
     .active {
         font-weight: bold;
         text-decoration: underline;
+        color: #22d3ee;
     }
     .lift-hover:hover {
         transform: translateY(-2px);
@@ -72,7 +73,7 @@
 
           <div>
             <h3 class="text-xl font-semibold mb-2 text-gray-100">The Results</h3>
-            <p>The v1.0 'Noise Filter' (Decision Tree) achieved a Threat Detection Accuracy of 62% on the test set. Key results show API efficiency was improved by intelligent caching which reduced queries by ~90%, and the full pipeline executes in less than 2 seconds. The project is fully reproducible using an environment.yml file and can be run via <code class="bg-gray-700 p-1 rounded">python main.py</code>. <a href="https://github.com/bobgaynor/cta-noise-filter" target="_blank" class="text-indigo-400 hover:text-indigo-300">[Link to full GitHub Repo]</a></p>
+            <p>The v1.0 'Noise Filter' (Decision Tree) achieved a Threat Detection Accuracy of 62% on the test set. Key results show API efficiency was improved by intelligent caching which reduced queries by ~90%, and the full pipeline executes in less than 2 seconds. The project is fully reproducible using an environment.yml file and can be run via <code class="bg-gray-700 p-1 rounded">python main.py</code>. <a href="https://github.com/bobgaynor/cta-noise-filter" target="_blank" class="text-cyan-400 hover:text-teal-400">[Link to full GitHub Repo]</a></p>
           </div>
         </div>
       </section>
@@ -90,7 +91,7 @@
             <input type="number" id="log_count" value="15" class="mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
           </div>
           
-          <button id="runDemo" class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">Run Threat Filter</button>
+          <button id="runDemo" class="w-full bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">Run Threat Filter</button>
           
           <div id="ctaResult" class="mt-4 p-4 rounded-lg"></div>
         </div>
