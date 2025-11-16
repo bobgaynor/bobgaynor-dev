@@ -1,47 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-gray-100 text-gray-800">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Bob Gaynor - Cybersecurity and MLOps Engineer specializing in threat intelligence, data pipelines, and machine learning operations.">
   <title>Bob Gaynor | Cybersecurity/MLOps Engineer</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #000;
+      color: white;
+      padding: 8px;
+      z-index: 100;
+      transition: top 0.3s;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+    /* Simple active link styling for demonstration */
+    .active {
+        font-weight: bold;
+        text-decoration: underline;
+    }
+  </style>
 </head>
-<body>
+<body class="font-sans leading-normal tracking-normal">
+
   <a href="#main-content" class="skip-link">Skip to main content</a>
-  <header>
-    <nav aria-label="Main navigation">
-      <ul>
-        <li><a href="index.html" aria-current="page" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-      </ul>
+
+  <header class="bg-gray-900 text-white shadow-lg">
+    <nav class="container mx-auto px-6 py-4" aria-label="Main navigation">
+      <div class="flex justify-between items-center">
+        <div class="text-xl font-semibold"><a href="index.html">Bob Gaynor</a></div>
+        <ul class="flex space-x-4">
+          <li><a href="index.html" aria-current="page" class="px-4 py-2 rounded hover:bg-gray-700 active">Home</a></li>
+          <li><a href="about.html" class="px-4 py-2 rounded hover:bg-gray-700">About</a></li>
+          <li><a href="projects.html" class="px-4 py-2 rounded hover:bg-gray-700">Projects</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
-  <main id="main-content">
-    <h1>Bob Gaynor | Cybersecurity/MLOps Engineer</h1>
-    <p class="hero-statement">Designing and running reliable data pipelines that support threat intelligence.</p>
-    
-    <section id="core-competencies">
-      <h2>Core Competencies</h2>
-      <ul>
-        <li>Python</li>
-        <li>Cloud Computing</li>
-        <li>MLOps</li>
-        <li>Data Engineering</li>
-        <li>Cyber Security</li>
-      </ul>
+  <main id="main-content" class="container mx-auto mt-10 px-6">
+    <section class="text-center py-12">
+      <h1 class="text-5xl font-extrabold text-gray-900 mb-4">Cybersecurity & MLOps Engineer</h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Designing and running reliable data pipelines that support threat intelligence.</p>
     </section>
     
-    <section id="call-to-action">
-      <h2>Explore My Work</h2>
-      <p>Review my primary project, the Cyber Threat Analyzer, or download my resume.</p>
-      <ul>
-        <li><a href="projects/cta.html" class="btn">View CTA Demo</a></li>
-        <li><a href="resume.pdf" class="btn" target="_blank">Download Resume</a></li>
-      </ul>
-    </section>
+    <div class="grid md:grid-cols-2 gap-12 my-12">
+      <section id="core-competencies" class="bg-white p-8 rounded-lg shadow-md">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">Core Competencies</h2>
+        <ul class="space-y-4">
+          <li class="flex items-center"><span class="bg-green-500 text-white rounded-full h-6 w-6 flex items-center justify-center mr-4">✓</span> Python</li>
+          <li class="flex items-center"><span class="bg-green-500 text-white rounded-full h-6 w-6 flex items-center justify-center mr-4">✓</span> Cloud Computing</li>
+          <li class="flex items-center"><span class="bg-green-500 text-white rounded-full h-6 w-6 flex items-center justify-center mr-4">✓</span> MLOps</li>
+          <li class="flex items-center"><span class="bg-green-500 text-white rounded-full h-6 w-6 flex items-center justify-center mr-4">✓</span> Data Engineering</li>
+          <li class="flex items-center"><span class="bg-green-500 text-white rounded-full h-6 w-6 flex items-center justify-center mr-4">✓</span> Cyber Security</li>
+        </ul>
+      </section>
+      
+      <section id="call-to-action" class="bg-white p-8 rounded-lg shadow-md">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">Explore My Work</h2>
+        <p class="text-gray-600 mb-6">Review my primary project, the Cyber Threat Analyzer, or download my resume.</p>
+        <div class="flex space-x-4">
+          <a href="projects/cta.html" class="btn bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-transform transform hover:scale-105">View CTA Demo</a>
+          <a href="resume.pdf" class="btn bg-gray-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-700 transition-transform transform hover:scale-105" target="_blank">Download Resume</a>
+        </div>
+      </section>
+    </div>
   </main>
+
 </body>
 </html>
