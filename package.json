@@ -1,0 +1,9 @@
+{
+  "name": "bobgaynor-dev",
+  "version": "0.1.0",
+  "description": "Portfolio website deployment environment.",
+  "scripts": {
+    "build": "echo 'No build step required for static content.'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
