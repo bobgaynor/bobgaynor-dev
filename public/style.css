@@ -14,12 +14,20 @@ main {
   padding: 0 1rem;
 }
 
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #121212;
-    color: #eee;
-  }
+/* Skip Navigation Link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 100;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
 }
 
 /* Header and Navigation */
@@ -44,20 +52,40 @@ nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s, outline 0.2s;
 }
 
-/* Form Elements */
-input[type="text"],
-input[type="email"],
-textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav a:focus {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+nav a.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-bottom: 2px solid #fff;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #eee;
+  }
+
+  header {
+    background-color: #1a252f;
+  }
+
+  .skip-link {
+    background: #fff;
+    color: #000;
+  }
 }
 
 /* Button */
@@ -75,4 +103,9 @@ textarea {
 
 .btn:hover {
   background-color: #45a049;
+}
+
+.btn:focus {
+  outline: 3px solid #4CAF50;
+  outline-offset: 2px;
 }
