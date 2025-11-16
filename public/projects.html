@@ -3,39 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of cybersecurity and MLOps projects by Bob Gaynor, including threat analysis, cloud automation, and data visualization.">
   <title>Projects | Bob Gaynor</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <header>
-    <nav>
+    <nav aria-label="Main navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
+        <li><a href="projects.html" aria-current="page" class="active">Projects</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
+  <main id="main-content">
     <h1>My Projects</h1>
-    
-    <ul>
-      <li>
-        <h3><a href="projects/cta.html">Cyber Threat Analyzer (CTA) — Interactive Demo</a></h3>
-        <p>An end-to-end data pipeline that ingests raw security logs, enriches them with threat intelligence, and uses a machine learning model to identify brute force activity. Built to show how data engineering, security analytics, and ML can work together in a single workflow.</p>
-      </li>
 
-      <li>
-        <h3>Cloud Infrastructure Automation</h3>
-        <p>A project using Infrastructure as Code to deploy and manage a secure cloud environment for a standard web application. Focuses on repeatability, minimal configuration drift, and clear separation between network, compute, and application layers.</p>
-      </li>
+    <section>
+      <h2><a href="projects/cta.html">Cyber Threat Analyzer (CTA) — Interactive Demo</a></h2>
+      <p>An end-to-end data pipeline that ingests raw security logs, enriches them with threat intelligence, and uses a machine learning model to identify brute force activity. Built to show how data engineering, security analytics, and ML can work together in a single workflow.</p>
+    </section>
 
-      <li>
-        <h3>Security Data Visualization</h3>
-        <p>A set of visualizations designed to explore security datasets and highlight trends, anomalies, and patterns. Emphasis on clarity, interaction, and practical use in analysis workflows.</p>
-      </li>
-    </ul>
+    <section>
+      <h2>Cloud Infrastructure Automation</h2>
+      <p>A project using Infrastructure as Code to deploy and manage a secure cloud environment for a standard web application. Focuses on repeatability, minimal configuration drift, and clear separation between network, compute, and application layers.</p>
+    </section>
+
+    <section>
+      <h2>Security Data Visualization</h2>
+      <p>A set of visualizations designed to explore security datasets and highlight trends, anomalies, and patterns. Emphasis on clarity, interaction, and practical use in analysis workflows.</p>
+    </section>
 
   </main>
 </body>

@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive demo of the Cyber Threat Analyzer - an ML-powered pipeline for detecting brute force attacks in security logs.">
   <title>Cyber Threat Analyzer (CTA) - Interactive Demo</title>
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <header>
-    <nav>
+    <nav aria-label="Main navigation">
       <ul>
         <li><a href="../index.html">Home</a></li>
         <li><a href="../about.html">About</a></li>
@@ -16,7 +18,7 @@
       </ul>
     </nav>
   </header>
-  <main>
+  <main id="main-content">
     <h1>Cyber Threat Analyzer (CTA) - Interactive Demo</h1>
 
     <section id="project-write-up">
@@ -51,25 +53,59 @@
 
   <script>
     document.getElementById('runDemo').addEventListener('click', function() {
-      const ipScore = parseInt(document.getElementById('ip_score').value, 10);
-      const logCount = parseInt(document.getElementById('log_count').value, 10);
+      const ipScoreInput = document.getElementById('ip_score').value;
+      const logCountInput = document.getElementById('log_count').value;
       const resultDiv = document.getElementById('ctaResult');
+
+      // Input validation
+      const ipScore = parseInt(ipScoreInput, 10);
+      const logCount = parseInt(logCountInput, 10);
+
+      if (isNaN(ipScore) || isNaN(logCount)) {
+        resultDiv.textContent = 'Error: Please enter valid numbers for both fields.';
+        resultDiv.style.backgroundColor = '#fff3cd';
+        resultDiv.style.color = '#856404';
+        return;
+      }
+
+      if (ipScore < 0 || ipScore > 100) {
+        resultDiv.textContent = 'Error: Suspicion Score must be between 0 and 100.';
+        resultDiv.style.backgroundColor = '#fff3cd';
+        resultDiv.style.color = '#856404';
+        return;
+      }
+
+      if (logCount < 0) {
+        resultDiv.textContent = 'Error: Log Entry Count cannot be negative.';
+        resultDiv.style.backgroundColor = '#fff3cd';
+        resultDiv.style.color = '#856404';
+        return;
+      }
+
       let classification = '';
-      let resultText = '';
+
+      // Clear previous content safely
+      resultDiv.textContent = '';
 
       if (ipScore >= 70 || logCount >= 20) {
         classification = 'SIGNAL';
-        resultText = `Classification: <strong>${classification}</strong> (Brute Force Attack Detected) based on Suspicion Score: ${ipScore} and Log Count: ${logCount}.`;
+        const strongEl = document.createElement('strong');
+        strongEl.textContent = classification;
+        resultDiv.appendChild(document.createTextNode('Classification: '));
+        resultDiv.appendChild(strongEl);
+        resultDiv.appendChild(document.createTextNode(` (Brute Force Attack Detected) based on Suspicion Score: ${ipScore} and Log Count: ${logCount}.`));
         resultDiv.style.backgroundColor = '#f8d7da';
         resultDiv.style.color = '#721c24';
       } else {
         classification = 'NOISE';
-        resultText = `Classification: <strong>${classification}</strong> (Normal Log Traffic) based on Suspicion Score: ${ipScore} and Log Count: ${logCount}.`;
+        const strongEl = document.createElement('strong');
+        strongEl.textContent = classification;
+        resultDiv.appendChild(document.createTextNode('Classification: '));
+        resultDiv.appendChild(strongEl);
+        resultDiv.appendChild(document.createTextNode(` (Normal Log Traffic) based on Suspicion Score: ${ipScore} and Log Count: ${logCount}.`));
         resultDiv.style.backgroundColor = '#d4edda';
         resultDiv.style.color = '#155724';
       }
-
-      resultDiv.innerHTML = resultText;
     });
   </script>
 </body>
