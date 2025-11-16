@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CTA Optimization Project</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Project: A/B Testing for CTA Conversion</h1>
+
+    <section id="project-write-up">
+      <h2>Project Write-up</h2>
+      <h3>Summary</h3>
+      <p></p>
+      <h3>The Problem</h3>
+      <p></p>
+      <h3>My Approach</h3>
+      <p></p>
+      <h3>The Results</h3>
+      <p></p>
+    </section>
+
+    <section id="interactive-demo">
+      <h2>Interactive Demo</h2>
+      <label for="conversion-rate">Enter a Conversion Rate (%):</label>
+      <input type="number" id="conversion-rate" name="conversion-rate" placeholder="e.g., 5">
+      <button class="btn" onclick="runOptimization()">Run Optimization</button>
+      <div id="cta-result" style="margin-top: 20px; padding: 15px; border-radius: 5px;"></div>
+    </section>
+  </main>
+
+  <script>
+    function runOptimization() {
+      const conversionRate = document.getElementById('conversion-rate').value;
+      const resultDiv = document.getElementById('cta-result');
+      let ctaText = '';
+
+      if (conversionRate > 5) {
+        ctaText = 'Suggested CTA: "Get Started Now!" - This is performing well.';
+        resultDiv.style.backgroundColor = '#d4edda';
+        resultDiv.style.color = '#155724';
+      } else {
+        ctaText = 'Suggested CTA: "Learn More & Save 20%!" - Needs improvement for better conversion.';
+        resultDiv.style.backgroundColor = '#f8d7da';
+        resultDiv.style.color = '#721c24';
+      }
+
+      resultDiv.innerHTML = ctaText;
+    }
+  </script>
+</body>
+</html>
