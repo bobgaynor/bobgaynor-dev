@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-gray-100 text-gray-800">
+<html lang="en" class="dark bg-gray-900 text-gray-300">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,32 +24,36 @@
         font-weight: bold;
         text-decoration: underline;
     }
+    .lift-hover:hover {
+        transform: translateY(-2px);
+        transition: transform 0.2s ease-in-out;
+    }
   </style>
 </head>
 <body class="font-sans leading-normal tracking-normal">
 
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <header class="bg-gray-900 text-white shadow-lg">
+  <header class="bg-gray-950 text-white shadow-lg">
     <nav class="container mx-auto px-6 py-4" aria-label="Main navigation">
       <div class="flex justify-between items-center">
-        <div class="text-xl font-semibold"><a href="index.html">Bob Gaynor</a></div>
+        <div class="text-xl font-semibold"><a href="index.html" class="lift-hover">Bob Gaynor</a></div>
         <ul class="flex space-x-4">
-          <li><a href="index.html" class="px-4 py-2 rounded hover:bg-gray-700">Home</a></li>
-          <li><a href="about.html" aria-current="page" class="px-4 py-2 rounded hover:bg-gray-700 active">About</a></li>
-          <li><a href="projects.html" class="px-4 py-2 rounded hover:bg-gray-700">Projects</a></li>
+          <li><a href="index.html" class="px-4 py-2 rounded hover:bg-gray-700 transition-colors lift-hover">Home</a></li>
+          <li><a href="about.html" aria-current="page" class="px-4 py-2 rounded hover:bg-gray-700 transition-colors lift-hover active">About</a></li>
+          <li><a href="projects.html" class="px-4 py-2 rounded hover:bg-gray-700 transition-colors lift-hover">Projects</a></li>
         </ul>
       </div>
     </nav>
   </header>
 
   <main id="main-content" class="container mx-auto mt-10 px-6">
-    <div class="bg-white p-8 rounded-lg shadow-md">
-        <h1 class="text-4xl font-extrabold text-gray-900 mb-6">About Me</h1>
+    <div class="bg-gray-800 p-8 rounded-lg shadow-md overflow-hidden">
+        <h1 class="text-4xl font-extrabold text-white mb-6">About Me</h1>
         
         <section id="professional-journey">
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">My Journey</h2>
-            <p class="text-lg text-gray-700 leading-relaxed">
+            <h2 class="text-3xl font-bold text-gray-100 mb-4">My Journey</h2>
+            <p class="text-lg text-gray-400 leading-relaxed">
             I am an engineer with a background in cybersecurity and a growing focus on machine learning. My work in security has shaped how I approach data, automation, and system reliability. I am continuing to expand my technical depth in areas that connect security, data engineering, and intelligent systems.
             </p>
         </section>

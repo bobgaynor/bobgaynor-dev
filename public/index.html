@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-gray-100 text-gray-800">
+<html lang="en" class="dark bg-gray-900 text-gray-300">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,10 +20,13 @@
     .skip-link:focus {
       top: 0;
     }
-    /* Simple active link styling for demonstration */
     .active {
         font-weight: bold;
         text-decoration: underline;
+    }
+    .lift-hover:hover {
+        transform: translateY(-2px);
+        transition: transform 0.2s ease-in-out;
     }
   </style>
 </head>
@@ -31,14 +34,14 @@
 
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <header class="bg-gray-900 text-white shadow-lg">
+  <header class="bg-gray-950 text-white shadow-lg">
     <nav class="container mx-auto px-6 py-4" aria-label="Main navigation">
       <div class="flex justify-between items-center">
-        <div class="text-xl font-semibold"><a href="index.html">Bob Gaynor</a></div>
+        <div class="text-xl font-semibold"><a href="index.html" class="lift-hover">Bob Gaynor</a></div>
         <ul class="flex space-x-4">
-          <li><a href="index.html" aria-current="page" class="px-4 py-2 rounded hover:bg-gray-700 active">Home</a></li>
-          <li><a href="about.html" class="px-4 py-2 rounded hover:bg-gray-700">About</a></li>
-          <li><a href="projects.html" class="px-4 py-2 rounded hover:bg-gray-700">Projects</a></li>
+          <li><a href="index.html" aria-current="page" class="px-4 py-2 rounded hover:bg-gray-700 transition-colors lift-hover active">Home</a></li>
+          <li><a href="about.html" class="px-4 py-2 rounded hover:bg-gray-700 transition-colors lift-hover">About</a></li>
+          <li><a href="projects.html" class="px-4 py-2 rounded hover:bg-gray-700 transition-colors lift-hover">Projects</a></li>
         </ul>
       </div>
     </nav>
@@ -46,28 +49,32 @@
 
   <main id="main-content" class="container mx-auto mt-10 px-6">
     <section class="text-center py-12">
-      <h1 class="text-5xl font-extrabold text-gray-900 mb-4">Cybersecurity & MLOps Engineer</h1>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Designing and running reliable data pipelines that support threat intelligence.</p>
+      <h1 class="text-5xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">Cybersecurity & MLOps Engineer</h1>
+      <p class="text-xl text-gray-400 max-w-3xl mx-auto">Designing and running reliable data pipelines that support threat intelligence.</p>
     </section>
     
     <div class="grid md:grid-cols-2 gap-12 my-12">
-      <section id="core-competencies" class="bg-white p-8 rounded-lg shadow-md">
-        <h2 class="text-3xl font-bold text-gray-800 mb-6">Core Competencies</h2>
-        <ul class="space-y-4">
-          <li class="flex items-center"><span class="bg-green-500 text-white rounded-full h-6 w-6 flex items-center justify-center mr-4">✓</span> Python</li>
-          <li class="flex items-center"><span class="bg-green-500 text-white rounded-full h-6 w-6 flex items-center justify-center mr-4">✓</span> Cloud Computing</li>
-          <li class="flex items-center"><span class="bg-green-500 text-white rounded-full h-6 w-6 flex items-center justify-center mr-4">✓</span> MLOps</li>
-          <li class="flex items-center"><span class="bg-green-500 text-white rounded-full h-6 w-6 flex items-center justify-center mr-4">✓</span> Data Engineering</li>
-          <li class="flex items-center"><span class="bg-green-500 text-white rounded-full h-6 w-6 flex items-center justify-center mr-4">✓</span> Cyber Security</li>
-        </ul>
+      <section id="core-competencies" class="bg-gray-800 rounded-lg shadow-md overflow-hidden">
+        <div class="p-8">
+            <h2 class="text-3xl font-bold text-white mb-6">Core Competencies</h2>
+            <ul class="space-y-4 text-gray-300">
+              <li class="flex items-center lift-hover"><span class="bg-green-500 text-white rounded-full h-6 w-6 flex items-center justify-center mr-4">✓</span> Python</li>
+              <li class="flex items-center lift-hover"><span class="bg-green-500 text-white rounded-full h-6 w-6 flex items-center justify-center mr-4">✓</span> Cloud Computing</li>
+              <li class="flex items-center lift-hover"><span class="bg-green-500 text-white rounded-full h-6 w-6 flex items-center justify-center mr-4">✓</span> MLOps</li>
+              <li class="flex items-center lift-hover"><span class="bg-green-500 text-white rounded-full h-6 w-6 flex items-center justify-center mr-4">✓</span> Data Engineering</li>
+              <li class="flex items-center lift-hover"><span class="bg-green-500 text-white rounded-full h-6 w-6 flex items-center justify-center mr-4">✓</span> Cyber Security</li>
+            </ul>
+        </div>
       </section>
       
-      <section id="call-to-action" class="bg-white p-8 rounded-lg shadow-md">
-        <h2 class="text-3xl font-bold text-gray-800 mb-6">Explore My Work</h2>
-        <p class="text-gray-600 mb-6">Review my primary project, the Cyber Threat Analyzer, or download my resume.</p>
-        <div class="flex space-x-4">
-          <a href="projects/cta.html" class="btn bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-transform transform hover:scale-105">View CTA Demo</a>
-          <a href="resume.pdf" class="btn bg-gray-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-700 transition-transform transform hover:scale-105" target="_blank">Download Resume</a>
+      <section id="call-to-action" class="bg-gray-800 rounded-lg shadow-md overflow-hidden">
+        <div class="p-8">
+            <h2 class="text-3xl font-bold text-white mb-6">Explore My Work</h2>
+            <p class="text-gray-400 mb-6">Review my primary project, the Cyber Threat Analyzer, or download my resume.</p>
+            <div class="flex space-x-4">
+              <a href="projects/cta.html" class="btn bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">View CTA Demo</a>
+              <a href="resume.pdf" class="btn bg-gray-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-600 lift-hover" target="_blank">Download Resume</a>
+            </div>
         </div>
       </section>
     </div>
