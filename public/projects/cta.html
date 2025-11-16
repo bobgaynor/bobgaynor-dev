@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CTA Optimization Project</title>
+  <title>Cyber Threat Analyzer (CTA) - Interactive Demo</title>
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -17,47 +17,60 @@
     </nav>
   </header>
   <main>
-    <h1>Project: A/B Testing for CTA Conversion</h1>
+    <h1>Cyber Threat Analyzer (CTA) - Interactive Demo</h1>
 
     <section id="project-write-up">
       <h2>Project Write-up</h2>
+      
       <h3>Summary</h3>
-      <p></p>
-      <h3>The Problem</h3>
-      <p></p>
+      <p>This project is a complete, end-to-end data pipeline built to demonstrate key skills in Data Engineering, Machine Learning, and MLOps. The core theme is "Signal in the Noise." The application ingests a raw system.log file (99% "noise") and uses a machine learning model to find the 1% "signal" of a brute force attack.</p>
+      
+      <h3>The Problem/Motivation</h3>
+      <p>As a cybersecurity professional, I was inspired by the need to perform manual, deep-dive analysis on anomalous security logs that automated tools often miss. This project demonstrates my ability to: Design end-to-end ML pipelines from raw data to model deployment; Apply machine learning to real-world security problems; and Build production-quality code with proper software engineering practices.</p>
+      
       <h3>My Approach</h3>
-      <p></p>
+      <p>The pipeline follows these steps: Raw Logs → Parse & Extract → Threat Intelligence Enrichment → Feature Engineering → ML Classification Model → Signal Report. Key features include: Ingesting and parsing raw, unstructured logs with Python and Regex; Automatically enriching IPs with live threat data from the AbuseIPDB API; and Intelligent caching to avoid re-querying the API.</p>
+
       <h3>The Results</h3>
-      <p></p>
+      <p>The v1.0 'Noise Filter' (Decision Tree) achieved a Threat Detection Accuracy of 62% on the test set. Key results show API efficiency was improved by intelligent caching which reduced queries by ~90%, and the full pipeline executes in less than 2 seconds. The project is fully reproducible using an environment.yml file and can be run via python main.py. <a href="https://github.com/bobgaynor/cta-noise-filter" target="_blank">[Link to full GitHub Repo]</a></p>
     </section>
 
     <section id="interactive-demo">
-      <h2>Interactive Demo</h2>
-      <label for="conversion-rate">Enter a Conversion Rate (%):</label>
-      <input type="number" id="conversion-rate" name="conversion-rate" placeholder="e.g., 5">
-      <button class="btn" onclick="runOptimization()">Run Optimization</button>
-      <div id="cta-result" style="margin-top: 20px; padding: 15px; border-radius: 5px;"></div>
+      <h2>Simulated Analysis Demo</h2>
+      <label for="ip_score">Suspicion Score (0-100):</label>
+      <input type="number" id="ip_score" value="50">
+      
+      <label for="log_count">Log Entry Count:</label>
+      <input type="number" id="log_count" value="15">
+      
+      <button id="runDemo">Run Threat Filter</button>
+      
+      <div id="ctaResult" style="margin-top: 20px; padding: 15px; border-radius: 5px;"></div>
     </section>
   </main>
 
   <script>
-    function runOptimization() {
-      const conversionRate = document.getElementById('conversion-rate').value;
-      const resultDiv = document.getElementById('cta-result');
-      let ctaText = '';
+    document.getElementById('runDemo').addEventListener('click', function() {
+      const ipScore = parseInt(document.getElementById('ip_score').value, 10);
+      const logCount = parseInt(document.getElementById('log_count').value, 10);
+      const resultDiv = document.getElementById('ctaResult');
+      let classification = '';
+      let resultText = '';
 
-      if (conversionRate > 5) {
-        ctaText = 'Suggested CTA: "Get Started Now!" - This is performing well.';
-        resultDiv.style.backgroundColor = '#d4edda';
-        resultDiv.style.color = '#155724';
-      } else {
-        ctaText = 'Suggested CTA: "Learn More & Save 20%!" - Needs improvement for better conversion.';
+      if (ipScore >= 70 || logCount >= 20) {
+        classification = 'SIGNAL';
+        resultText = `Classification: <strong>${classification}</strong> (Brute Force Attack Detected) based on Suspicion Score: ${ipScore} and Log Count: ${logCount}.`;
         resultDiv.style.backgroundColor = '#f8d7da';
         resultDiv.style.color = '#721c24';
+      } else {
+        classification = 'NOISE';
+        resultText = `Classification: <strong>${classification}</strong> (Normal Log Traffic) based on Suspicion Score: ${ipScore} and Log Count: ${logCount}.`;
+        resultDiv.style.backgroundColor = '#d4edda';
+        resultDiv.style.color = '#155724';
       }
 
-      resultDiv.innerHTML = ctaText;
-    }
+      resultDiv.innerHTML = resultText;
+    });
   </script>
 </body>
 </html>
