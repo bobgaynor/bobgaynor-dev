@@ -4,7 +4,7 @@ import { SYSTEM_INSTRUCTION } from '../constants';
 // Initialize Gemini Client
 // Note: In a real production app, be careful exposing API keys in client-side code 
 // without strict referer restrictions or a backend proxy.
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY });
 
 let chatSession: Chat | null = null;
 
