@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "public",
+    "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -59,7 +59,7 @@
         "source": "**/*.html",
         "headers": [
           {
-            "key": "Cache-Control",
+            "key": "Cache-control",
             "value": "public, max-age=3600"
           }
         ]
