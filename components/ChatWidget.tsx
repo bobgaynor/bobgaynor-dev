@@ -3,10 +3,15 @@ import { ChatMessage } from '../types';
 import { sendMessageToGemini } from '../services/geminiService';
 import { PROFILE } from '../constants';
 
+// Helper function to generate unique IDs for messages
+const generateMessageId = (): string => {
+  return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+};
+
 const ChatWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([
-    { role: 'model', text: `Hi! I'm ${PROFILE.name.split(' ')[0]}'s AI assistant. Ask me anything about his skills, experience, or projects!`, timestamp: new Date() }
+    { id: generateMessageId(), role: 'model', text: `Hi! I'm ${PROFILE.name.split(' ')[0]}'s AI assistant. Ask me anything about his skills, experience, or projects!`, timestamp: new Date() }
   ]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -20,7 +25,18 @@ const ChatWidget: React.FC = () => {
     if (isOpen) {
       scrollToBottom();
     }
-  }, [messages, isOpen]);
+  }, [messages]);
+
+  // Handle Escape key to close chat
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [isOpen]);
 
   const handleSend = async (e?: React.FormEvent) => {
     e?.preventDefault();
@@ -28,19 +44,20 @@ const ChatWidget: React.FC = () => {
 
     const userText = inputValue.trim();
     setInputValue('');
-    
-    const userMsg: ChatMessage = { role: 'user', text: userText, timestamp: new Date() };
+
+    const userMsg: ChatMessage = { id: generateMessageId(), role: 'user', text: userText, timestamp: new Date() };
     setMessages(prev => [...prev, userMsg]);
     setIsLoading(true);
 
     try {
       const responseText = await sendMessageToGemini(userText);
-      const aiMsg: ChatMessage = { role: 'model', text: responseText, timestamp: new Date() };
+      const aiMsg: ChatMessage = { id: generateMessageId(), role: 'model', text: responseText, timestamp: new Date() };
       setMessages(prev => [...prev, aiMsg]);
     } catch (error) {
-      const errorMsg: ChatMessage = { 
-        role: 'model', 
-        text: "I'm having trouble connecting right now. Please try again later.", 
+      const errorMsg: ChatMessage = {
+        id: generateMessageId(),
+        role: 'model',
+        text: "I'm having trouble connecting right now. Please try again later.",
         timestamp: new Date(),
         isError: true
       };
@@ -61,9 +78,10 @@ const ChatWidget: React.FC = () => {
               <div className="w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse"></div>
               <h3 className="text-white font-semibold text-sm">Portfolio Assistant</h3>
             </div>
-            <button 
+            <button
               onClick={() => setIsOpen(false)}
               className="text-slate-400 hover:text-white transition-colors"
+              aria-label="Close chat"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -73,8 +91,8 @@ const ChatWidget: React.FC = () => {
 
           {/* Messages Area */}
           <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-900/95 scrollbar-thin scrollbar-thumb-slate-700">
-            {messages.map((msg, idx) => (
-              <div key={idx} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+            {messages.map((msg) => (
+              <div key={msg.id} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                 <div 
                   className={`max-w-[80%] p-3 rounded-2xl text-sm ${
                     msg.role === 'user' 
@@ -112,11 +130,13 @@ const ChatWidget: React.FC = () => {
                 placeholder="Ask about my experience..."
                 className="w-full bg-slate-900 text-white text-sm rounded-full pl-4 pr-10 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 border border-slate-700 placeholder-slate-500"
                 disabled={isLoading}
+                aria-label="Chat message input"
               />
-              <button 
+              <button
                 type="submit"
                 disabled={!inputValue.trim() || isLoading}
                 className="absolute right-2 top-1/2 transform -translate-y-1/2 p-1.5 bg-primary text-white rounded-full disabled:opacity-50 disabled:cursor-not-allowed hover:bg-teal-600 transition-colors"
+                aria-label="Send message"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />

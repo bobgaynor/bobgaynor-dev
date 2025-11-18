@@ -1,14 +1,22 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { UI_CONFIG } from '../constants';
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
+  const ticking = useRef(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      if (!ticking.current) {
+        window.requestAnimationFrame(() => {
+          setScrolled(window.scrollY > UI_CONFIG.NAVBAR_SCROLL_THRESHOLD);
+          ticking.current = false;
+        });
+        ticking.current = true;
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -42,10 +50,13 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Mobile Menu Button Placeholder - Simple Implementation for brevity */}
-        <div className="md:hidden text-white">
-           {/* In a full implementation, a mobile menu toggle would go here */}
-           ☰
-        </div>
+        <button
+          className="md:hidden text-white text-2xl focus:outline-none focus:ring-2 focus:ring-primary rounded"
+          aria-label="Open navigation menu"
+          onClick={() => {/* Mobile menu functionality to be implemented */}}
+        >
+          ☰
+        </button>
       </div>
     </nav>
   );
