@@ -1,20 +1,56 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# bobgaynor.dev - Personal Portfolio
 
-# Run and deploy your AI Studio app
+This repository contains the source code for my personal portfolio website, deployed and hosted on Firebase. The site showcases my skills and projects, with a focus on combining security expertise with machine learning.
 
-This contains everything you need to run your app locally.
+**Live Site:** [https://bobgaynor.dev](https://bobgaynor.dev)
 
-View your app in AI Studio: https://ai.studio/apps/drive/1QJK_8u68xWF1JeqUS1hRMrG8cH_0GJ9b
+---
 
-## Run Locally
+## Description
 
-**Prerequisites:**  Node.js
+Combining security expertise with machine learning to reveal hidden threat patterns and move detection toward predictive intelligence.
 
+---
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Technology Stack
+
+*   **Frontend:** React with TypeScript
+*   **Build Tool:** Vite
+*   **Hosting:** Firebase Hosting
+*   **AI Integration:** Google Gemini API
+*   **Deployment:** Automated via GitHub Actions
+
+---
+
+## Local Development
+
+To run this project locally, follow these steps:
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/bobgaynor/bobgaynor-dev.git
+    cd bobgaynor-dev
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+3.  **Set up environment variables:**
+    Create a `.env.local` file in the root of the project and add your Gemini API key:
+    ```
+    VITE_API_KEY=your_api_key_here
+    ```
+
+4.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+    The site will be available at `http://localhost:5173`.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
