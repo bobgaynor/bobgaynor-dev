@@ -54,12 +54,12 @@
               <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.65.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
             </svg>
           </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-cyan-400">
+          <a href="https://www.linkedin.com/in/bobgaynor/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-cyan-400">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
               <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5V8h3v11zM6.5 6.73c-.966 0-1.75-.784-1.75-1.75S5.534 3.23 6.5 3.23s1.75.784 1.75 1.75S7.466 6.73 6.5 6.73zM19 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765c1.4-2.586 7-2.777 7 2.476V19z" />
             </svg>
           </a>
-          <a href="mailto:bob.gaynor@example.com" class="text-gray-400 hover:text-cyan-400">
+          <a id="email-link" class="text-gray-400 hover:text-cyan-400">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                   <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
                   <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
@@ -76,22 +76,22 @@
     <div class="space-y-8">
       <section class="bg-gray-800 p-8 rounded-lg shadow-md overflow-hidden">
         <h2 class="text-3xl font-bold text-white mb-6 text-cyan-400">Summary</h2>
-        <p class="text-gray-400">This project is a complete, end-to-end data pipeline built to demonstrate key skills in Data Engineering, Machine Learning, and MLOps. The core theme is "Signal in the Noise." The application ingests a raw system.log file (99% "noise") and uses a machine learning model to find the 1% "signal" of a brute force attack.</p>
+        <p class="text-gray-400">The Cyber Threat Analyzer (CTA) is an end-to-end data pipeline built to demonstrate practical skills in data engineering, machine learning, and MLOps. Centered around the idea of finding the signal in the noise, the system ingests a raw system.log file and isolates the small set of entries that indicate a brute-force attack. This project highlights my ability to design a focused workflow, apply ML techniques to security data, and deliver a complete solution suitable for a professional portfolio.</p>
       </section>
 
       <section class="bg-gray-800 p-8 rounded-lg shadow-md overflow-hidden">
         <h2 class="text-3xl font-bold text-white mb-6 text-cyan-400">The Problem/Motivation</h2>
-        <p class="text-gray-400">As a cybersecurity professional, I was inspired by the need to perform manual, deep-dive analysis on anomalous security logs that automated tools often miss. This project demonstrates my ability to: Design end-to-end ML pipelines from raw data to model deployment; Apply machine learning to real-world security problems; and Build production-quality code with proper software engineering practices.</p>
+        <p class="text-gray-400">Security teams are flooded with log data. Most entries represent routine operations (the noise), while only a small fraction indicate real threats (the signal). The challenge is detecting subtle brute force attacks hidden within millions of benign events. With limited resources and increasing threat volume, automated end-to-end solutions are becoming essential. This project grew from my goal to build such a pipeline: one that moves from raw logs to meaningful alerts and demonstrates how AI and data engineering can strengthen security intelligence.</p>
       </section>
 
       <section class="bg-gray-800 p-8 rounded-lg shadow-md overflow-hidden">
         <h2 class="text-3xl font-bold text-white mb-6 text-cyan-400">My Approach</h2>
-        <p class="text-gray-400">The pipeline follows these steps: Raw Logs → Parse & Extract → Threat Intelligence Enrichment → Feature Engineering → ML Classification Model → Signal Report. Key features include: Ingesting and parsing raw, unstructured logs with Python and Regex; Automatically enriching IPs with live threat data from the AbuseIPDB API; and Intelligent caching to avoid re-querying the API.</p>
+        <p class="text-gray-400">I built a structured pipeline that takes a raw system.log file and moves it through cleaning, feature extraction, and model evaluation. The goal was to separate normal activity from entries that indicate a brute force attack. Each step is designed to be clear, repeatable, and easy to follow. The project focuses on how data engineering and machine learning can work together to reveal meaningful “signals” in security data.</p>
       </section>
 
       <section class="bg-gray-800 p-8 rounded-lg shadow-md overflow-hidden">
         <h2 class="text-3xl font-bold text-white mb-6 text-cyan-400">The Results</h2>
-        <p class="text-gray-400">The v1.0 'Noise Filter' (Decision Tree) achieved a Threat Detection Accuracy of 62% on the test set. Key results show API efficiency was improved by intelligent caching which reduced queries by ~90%, and the full pipeline executes in less than 2 seconds. The project is fully reproducible using an environment.yml file and can be run via <code class="bg-gray-700 p-1 rounded">python main.py</code>. <a href="https://github.com/bobgaynor/cta-noise-filter" target="_blank" class="text-cyan-400 hover:text-teal-400">[Link to full GitHub Repo]</a></p>
+        <p class="text-gray-400">The pipeline successfully filtered out the noise in the system.log file and surfaced the entries associated with a brute force attack. The final output is a clear view of the events that matter, along with a structured dataset that can be used for further analysis or model improvement. The project shows how an organized workflow can turn unstructured security logs into actionable intelligence.</p>
       </section>
 
       <section id="interactive-demo" class="bg-gray-800 p-8 rounded-lg shadow-md overflow-hidden">
@@ -161,6 +161,11 @@
 
     // Initial run to display default values
     // runThreatFilter();
+  </script>
+  <script>
+    document.getElementById('email-link').addEventListener('click', function() {
+      this.href = 'mailto:bg@bobgaynor.dev';
+    });
   </script>
 </body>
 </html>
