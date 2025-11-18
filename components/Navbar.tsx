@@ -22,11 +22,7 @@ const Navbar: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'unset';
   }, [isMobileMenuOpen]);
 
   const toggleMobileMenu = () => {
@@ -44,40 +40,42 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'glass-panel py-3 shadow-lg' : 'bg-transparent py-6'
-      }`}
-    >
-      <div className="container mx-auto px-6 flex justify-between items-center">
-        <a href="#" className="text-2xl font-bold tracking-tighter text-white hover:text-primary transition-colors">
-          bobgaynor<span className="text-primary">.dev</span>
-        </a>
+    <>
+      <nav 
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+          scrolled ? 'glass-panel py-3 shadow-lg' : 'bg-transparent py-6'
+        }`}
+      >
+        <div className="container mx-auto px-6 flex justify-between items-center">
+          <a href="#" className="text-2xl font-bold tracking-tighter text-white hover:text-primary transition-colors">
+            bobgaynor<span className="text-primary">.dev</span>
+          </a>
+          
+          <div className="hidden md:flex space-x-8">
+            {navLinks.map((link) => (
+              <a 
+                key={link.name}
+                href={link.href} 
+                className="text-sm font-medium text-slate-300 hover:text-primary transition-colors"
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
 
-        <div className="hidden md:flex space-x-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="text-sm font-medium text-slate-300 hover:text-primary transition-colors"
-            >
-              {link.name}
-            </a>
-          ))}
+          <button
+            className="md:hidden text-white text-2xl focus:outline-none focus:ring-2 focus:ring-primary rounded relative z-50"
+            aria-label="Open navigation menu"
+            onClick={toggleMobileMenu}
+          >
+            {isMobileMenuOpen ? '✕' : '☰'}
+          </button>
         </div>
-
-        <button
-          className="md:hidden text-white text-2xl focus:outline-none focus:ring-2 focus:ring-primary rounded"
-          aria-label="Open navigation menu"
-          onClick={toggleMobileMenu}
-        >
-          {isMobileMenuOpen ? '✕' : '☰'}
-        </button>
-      </div>
+      </nav>
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden fixed top-0 left-0 w-full h-full bg-slate-900/90 backdrop-blur-sm z-40 transition-opacity duration-300 ${
+        className={`md:hidden fixed top-0 left-0 w-full h-full bg-slate-900/90 backdrop-blur-sm z-30 transition-opacity duration-300 ${
           isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
       >
@@ -94,7 +92,7 @@ const Navbar: React.FC = () => {
           ))}
         </div>
       </div>
-    </nav>
+    </>
   );
 };
 

@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect } from 'react';
 import { ChatMessage } from '../types';
 import { sendMessageToGemini } from '../services/geminiService';
@@ -25,7 +26,7 @@ const ChatWidget: React.FC = () => {
     if (isOpen) {
       scrollToBottom();
     }
-  }, [messages]);
+  }, [messages, isOpen]);
 
   // Handle Escape key to close chat
   useEffect(() => {
@@ -46,18 +47,19 @@ const ChatWidget: React.FC = () => {
     setInputValue('');
 
     const userMsg: ChatMessage = { id: generateMessageId(), role: 'user', text: userText, timestamp: new Date() };
-    setMessages(prev => [...prev, userMsg]);
+    const newMessages = [...messages, userMsg];
+    setMessages(newMessages);
     setIsLoading(true);
 
     try {
-      const responseText = await sendMessageToGemini(userText);
+      const responseText = await sendMessageToGemini(userText, newMessages);
       const aiMsg: ChatMessage = { id: generateMessageId(), role: 'model', text: responseText, timestamp: new Date() };
       setMessages(prev => [...prev, aiMsg]);
-    } catch (error) {
+    } catch (error: any) {
       const errorMsg: ChatMessage = {
         id: generateMessageId(),
         role: 'model',
-        text: "I'm having trouble connecting right now. Please try again later.",
+        text: error.message || "I'm having trouble connecting right now. Please try again later.",
         timestamp: new Date(),
         isError: true
       };
@@ -66,7 +68,6 @@ const ChatWidget: React.FC = () => {
       setIsLoading(false);
     }
   };
-
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
       {/* Chat Window */}
@@ -144,7 +145,7 @@ const ChatWidget: React.FC = () => {
               </button>
             </div>
             <div className="text-[10px] text-center text-slate-500 mt-2">
-              Powered by Gemini 2.5 Flash
+              Powered by Gemini 1.5 Flash
             </div>
           </form>
         </div>
