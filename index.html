@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Developer Portfolio</title>
+    <title>bobgaynor.dev</title>
+    <meta name="description" content="Combining security expertise with machine learning to reveal hidden threat patterns and move detection toward predictive intelligence." />
+    
+    <!-- Custom SVG Favicon: A terminal prompt >_ inside a teal block -->
+    <link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="20" fill="%2314b8a6"/><path d="M25 35 L45 50 L25 65 M55 65 L75 65" stroke="white" stroke-width="10" fill="none" stroke-linecap="round"/></svg>' />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -42,6 +47,43 @@
         -webkit-backdrop-filter: blur(12px);
         border: 1px solid rgba(255, 255, 255, 0.05);
       }
+
+      /* Signal Animation */
+      @keyframes signalFlow {
+        0% {
+          background-position: 200% center;
+        }
+        100% {
+          background-position: -200% center;
+        }
+      }
+
+      .signal-text {
+        /* Gradient: Teal -> White (The Signal) -> Teal */
+        background: linear-gradient(
+          120deg, 
+          #14b8a6 20%, 
+          #0f766e 40%, 
+          #ffffff 50%, 
+          #0f766e 60%, 
+          #14b8a6 80%
+        );
+        background-size: 200% auto;
+        
+        /* Standard and Webkit properties for text masking */
+        -webkit-background-clip: text;
+        background-clip: text;
+        
+        /* Crucial for Chrome to override parent text color */
+        color: transparent !important;
+        -webkit-text-fill-color: transparent !important;
+        
+        animation: signalFlow 3s linear infinite;
+        
+        /* Ensure the gradient doesn't get clipped at the bottom of letters */
+        padding-bottom: 0.1em;
+        display: inline-block; 
+      }
     </style>
   <script type="importmap">
 {
@@ -53,10 +95,10 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
 </head>
   <body class="bg-dark text-slate-300 antialiased selection:bg-primary selection:text-white">
     <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
-</body>
+    <!-- This script tag is required to actually start the React application -->
+    <script type="module" src="./index.tsx"></script>
+  </body>
 </html>

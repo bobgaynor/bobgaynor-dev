@@ -15,7 +15,7 @@ const Projects: React.FC = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col items-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Featured Project</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 uppercase">Featured Project</h2>
           <div className="w-24 h-1 bg-primary rounded-full"></div>
         </div>
 
@@ -45,7 +45,7 @@ const Projects: React.FC = () => {
                   
                   <div className="flex flex-wrap gap-2 mb-8">
                     {featuredProject.tags.map(tag => (
-                      <span key={tag} className="text-sm font-medium px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-primary">
+                      <span key={tag} className="text-xs font-medium px-2.5 py-1 rounded-full bg-slate-800 border border-slate-700 text-primary whitespace-nowrap">
                         {tag}
                       </span>
                     ))}

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { PROFILE } from '../constants';
 
@@ -9,32 +10,14 @@ const Hero: React.FC = () => {
       <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-teal-600/10 rounded-full blur-3xl -z-10"></div>
 
       <div className="container mx-auto px-6 text-center z-10">
-        
-        <h1 className="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-6 leading-tight">
-          Finding the <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-400">
-            signal
-          </span>
+        {/* Reduced mb-6 to mb-2 to close the gap. Kept py-4 to prevent animation clipping on Chrome. */}
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-2 leading-relaxed py-4">
+          Finding the <span className="signal-text">signal</span>
         </h1>
         
         <p className="max-w-2xl mx-auto text-lg md:text-xl text-slate-400 mb-10 leading-relaxed">
           {PROFILE.bio}
         </p>
-        
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <a 
-            href="#projects" 
-            className="px-8 py-3 rounded-full bg-primary text-white font-medium hover:bg-teal-600 transition-all shadow-[0_0_20px_rgba(20,184,166,0.5)] hover:shadow-[0_0_30px_rgba(20,184,166,0.6)]"
-          >
-            View Projects
-          </a>
-          <a 
-            href="#contact" 
-            className="px-8 py-3 rounded-full bg-slate-800 text-white font-medium border border-slate-700 hover:bg-slate-700 transition-all"
-          >
-            Contact Me
-          </a>
-        </div>
       </div>
 
       {/* Scroll Indicator */}
