@@ -35,104 +35,106 @@
 
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <header class="bg-gray-950 text-white shadow-lg">
-    <nav class="container mx-auto px-6 py-4" aria-label="Main navigation">
-      <div class="flex justify-between items-center">
-        <div class="text-xl font-semibold"><a href="../index.html" class="lift-hover">Bob Gaynor</a></div>
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-gray-950/75 text-white shadow-lg">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center" aria-label="Main navigation">
+      <!-- Left Column: Navigation Links -->
+      <div>
         <ul class="flex space-x-4">
           <li><a href="../index.html" class="px-4 py-2 rounded hover:bg-gray-700 transition-colors lift-hover">Home</a></li>
           <li><a href="../about.html" class="px-4 py-2 rounded hover:bg-gray-700 transition-colors lift-hover">About</a></li>
           <li><a href="../projects.html" class="px-4 py-2 rounded hover:bg-gray-700 transition-colors lift-hover active">Projects</a></li>
         </ul>
       </div>
+
+      <!-- Right Column: Connect Icons -->
+      <div>
+        <div class="flex items-center space-x-4">
+          <a href="https://github.com/bobgaynor" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-cyan-400">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+              <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.65.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
+            </svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-cyan-400">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+              <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5V8h3v11zM6.5 6.73c-.966 0-1.75-.784-1.75-1.75S5.534 3.23 6.5 3.23s1.75.784 1.75 1.75S7.466 6.73 6.5 6.73zM19 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765c1.4-2.586 7-2.777 7 2.476V19z" />
+            </svg>
+          </a>
+          <a href="mailto:bob.gaynor@example.com" class="text-gray-400 hover:text-cyan-400">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
+                  <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
+              </svg>
+          </a>
+        </div>
+      </div>
     </nav>
   </header>
 
   <main id="main-content" class="container mx-auto mt-10 px-6">
-    <h1 class="text-4xl font-extrabold text-white mb-8 text-center">Cyber Threat Analyzer (CTA) - Interactive Demo</h1>
+    <h1 class="text-4xl font-extrabold text-white mb-8 text-center text-cyan-400">Cyber Threat Analyzer (CTA) - Interactive Demo</h1>
 
-    <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
-      <section id="project-write-up" class="bg-gray-800 p-8 rounded-lg shadow-md overflow-hidden">
-        <h2 class="text-3xl font-bold text-white mb-6">Project Write-up</h2>
-        
-        <div class="space-y-6 text-gray-400">
-          <div>
-            <h3 class="text-xl font-semibold mb-2 text-gray-100">Summary</h3>
-            <p>This project is a complete, end-to-end data pipeline built to demonstrate key skills in Data Engineering, Machine Learning, and MLOps. The core theme is "Signal in the Noise." The application ingests a raw system.log file (99% "noise") and uses a machine learning model to find the 1% "signal" of a brute force attack.</p>
-          </div>
-          
-          <div>
-            <h3 class="text-xl font-semibold mb-2 text-gray-100">The Problem/Motivation</h3>
-            <p>As a cybersecurity professional, I was inspired by the need to perform manual, deep-dive analysis on anomalous security logs that automated tools often miss. This project demonstrates my ability to: Design end-to-end ML pipelines from raw data to model deployment; Apply machine learning to real-world security problems; and Build production-quality code with proper software engineering practices.</p>
-          </div>
+    <div class="space-y-8">
+      <section class="bg-gray-800 p-8 rounded-lg shadow-md overflow-hidden">
+        <h2 class="text-3xl font-bold text-white mb-6 text-cyan-400">Summary</h2>
+        <p class="text-gray-400">This project is a complete, end-to-end data pipeline built to demonstrate key skills in Data Engineering, Machine Learning, and MLOps. The core theme is "Signal in the Noise." The application ingests a raw system.log file (99% "noise") and uses a machine learning model to find the 1% "signal" of a brute force attack.</p>
+      </section>
 
-          <div>
-            <h3 class="text-xl font-semibold mb-2 text-gray-100">My Approach</h3>
-            <p>The pipeline follows these steps: Raw Logs → Parse & Extract → Threat Intelligence Enrichment → Feature Engineering → ML Classification Model → Signal Report. Key features include: Ingesting and parsing raw, unstructured logs with Python and Regex; Automatically enriching IPs with live threat data from the AbuseIPDB API; and Intelligent caching to avoid re-querying the API.</p>
-          </div>
+      <section class="bg-gray-800 p-8 rounded-lg shadow-md overflow-hidden">
+        <h2 class="text-3xl font-bold text-white mb-6 text-cyan-400">The Problem/Motivation</h2>
+        <p class="text-gray-400">As a cybersecurity professional, I was inspired by the need to perform manual, deep-dive analysis on anomalous security logs that automated tools often miss. This project demonstrates my ability to: Design end-to-end ML pipelines from raw data to model deployment; Apply machine learning to real-world security problems; and Build production-quality code with proper software engineering practices.</p>
+      </section>
 
-          <div>
-            <h3 class="text-xl font-semibold mb-2 text-gray-100">The Results</h3>
-            <p>The v1.0 'Noise Filter' (Decision Tree) achieved a Threat Detection Accuracy of 62% on the test set. Key results show API efficiency was improved by intelligent caching which reduced queries by ~90%, and the full pipeline executes in less than 2 seconds. The project is fully reproducible using an environment.yml file and can be run via <code class="bg-gray-700 p-1 rounded">python main.py</code>. <a href="https://github.com/bobgaynor/cta-noise-filter" target="_blank" class="text-cyan-400 hover:text-teal-400">[Link to full GitHub Repo]</a></p>
-          </div>
-        </div>
+      <section class="bg-gray-800 p-8 rounded-lg shadow-md overflow-hidden">
+        <h2 class="text-3xl font-bold text-white mb-6 text-cyan-400">My Approach</h2>
+        <p class="text-gray-400">The pipeline follows these steps: Raw Logs → Parse & Extract → Threat Intelligence Enrichment → Feature Engineering → ML Classification Model → Signal Report. Key features include: Ingesting and parsing raw, unstructured logs with Python and Regex; Automatically enriching IPs with live threat data from the AbuseIPDB API; and Intelligent caching to avoid re-querying the API.</p>
+      </section>
+
+      <section class="bg-gray-800 p-8 rounded-lg shadow-md overflow-hidden">
+        <h2 class="text-3xl font-bold text-white mb-6 text-cyan-400">The Results</h2>
+        <p class="text-gray-400">The v1.0 'Noise Filter' (Decision Tree) achieved a Threat Detection Accuracy of 62% on the test set. Key results show API efficiency was improved by intelligent caching which reduced queries by ~90%, and the full pipeline executes in less than 2 seconds. The project is fully reproducible using an environment.yml file and can be run via <code class="bg-gray-700 p-1 rounded">python main.py</code>. <a href="https://github.com/bobgaynor/cta-noise-filter" target="_blank" class="text-cyan-400 hover:text-teal-400">[Link to full GitHub Repo]</a></p>
       </section>
 
       <section id="interactive-demo" class="bg-gray-800 p-8 rounded-lg shadow-md overflow-hidden">
-        <h2 class="text-3xl font-bold text-white mb-6">Simulated Analysis Demo</h2>
+        <h2 class="text-3xl font-bold text-white mb-6 text-cyan-400">Simulated Analysis Demo</h2>
         <div class="space-y-4">
           <div>
-            <label for="ip_score" class="block text-sm font-medium text-gray-400">Suspicion Score (0-100):</label>
-            <input type="number" id="ip_score" value="50" class="mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+            <label for="ip_score" class="block text-sm font-medium text-gray-400">Suspicion Score (0-100): <span id="ip_score_value" class="font-bold text-cyan-400">50</span></label>
+            <input type="range" id="ip_score" min="0" max="100" value="50" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer">
           </div>
           
           <div>
-            <label for="log_count" class="block text-sm font-medium text-gray-400">Log Entry Count:</label>
-            <input type="number" id="log_count" value="15" class="mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+            <label for="log_count" class="block text-sm font-medium text-gray-400">Log Entry Count: <span id="log_count_value" class="font-bold text-cyan-400">15</span></label>
+            <input type="range" id="log_count" min="0" max="50" value="15" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer">
           </div>
           
-          <button id="runDemo" class="w-full bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">Run Threat Filter</button>
-          
-          <div id="ctaResult" class="mt-4 p-4 rounded-lg"></div>
+          <div id="ctaResult" class="mt-4 p-4 rounded-lg hidden"></div>
         </div>
       </section>
     </div>
   </main>
 
-  <script>
-    document.getElementById('runDemo').addEventListener('click', function() {
-      const ipScoreInput = document.getElementById('ip_score').value;
-      const logCountInput = document.getElementById('log_count').value;
-      const resultDiv = document.getElementById('ctaResult');
+  <footer class="text-center py-6 text-gray-500 text-sm">
+    <p>&copy; 2025 Bob Gaynor</p>
+  </footer>
 
-      // Input validation
-      const ipScore = parseInt(ipScoreInput, 10);
-      const logCount = parseInt(logCountInput, 10);
-      
-      // Reset classes
+  <script>
+    const ipScoreSlider = document.getElementById('ip_score');
+    const logCountSlider = document.getElementById('log_count');
+    const ipScoreValue = document.getElementById('ip_score_value');
+    const logCountValue = document.getElementById('log_count_value');
+    const resultDiv = document.getElementById('ctaResult');
+
+    function runThreatFilter() {
+      resultDiv.classList.remove('hidden');
+      const ipScore = parseInt(ipScoreSlider.value, 10);
+      const logCount = parseInt(logCountSlider.value, 10);
+
+      ipScoreValue.textContent = ipScore;
+      logCountValue.textContent = logCount;
+
       resultDiv.className = 'mt-4 p-4 rounded-lg';
 
-      if (isNaN(ipScore) || isNaN(logCount)) {
-        resultDiv.textContent = 'Error: Please enter valid numbers for both fields.';
-        resultDiv.classList.add('bg-yellow-900', 'text-yellow-100');
-        return;
-      }
-
-      if (ipScore < 0 || ipScore > 100) {
-        resultDiv.textContent = 'Error: Suspicion Score must be between 0 and 100.';
-        resultDiv.classList.add('bg-yellow-900', 'text-yellow-100');
-        return;
-      }
-
-      if (logCount < 0) {
-        resultDiv.textContent = 'Error: Log Entry Count cannot be negative.';
-        resultDiv.classList.add('bg-yellow-900', 'text-yellow-100');
-        return;
-      }
-
       let classification = '';
-
-      // Clear previous content safely
       resultDiv.textContent = '';
 
       if (ipScore >= 70 || logCount >= 20) {
@@ -152,7 +154,13 @@
         resultDiv.appendChild(strongEl);
         resultDiv.appendChild(document.createTextNode(` (Normal Log Traffic) based on Suspicion Score: ${ipScore} and Log Count: ${logCount}.`));
       }
-    });
+    }
+
+    ipScoreSlider.addEventListener('input', runThreatFilter);
+    logCountSlider.addEventListener('input', runThreatFilter);
+
+    // Initial run to display default values
+    // runThreatFilter();
   </script>
 </body>
 </html>
