@@ -1,24 +1,25 @@
 # Logs
-logs
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Dependencies
+/node_modules
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# Build output
+/dist
+
+# Environment variables
+.env
+.env.*
+!/.env.example
+
+# IDE & Environment files
+.idea/
+.vscode/
+.idx/
+metadata.json
+
+# macOS files
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+
+# Windows files
+Thumbs.db
