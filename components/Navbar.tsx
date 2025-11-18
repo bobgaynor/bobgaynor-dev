@@ -4,6 +4,7 @@ import { UI_CONFIG } from '../constants';
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const ticking = useRef(false);
 
   useEffect(() => {
@@ -20,14 +21,30 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isMobileMenuOpen]);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   const navLinks = [
     { name: 'Capabilities', href: '#focus' },
     { name: 'Featured', href: '#projects' },
     { name: 'Contact', href: '#contact' },
   ];
 
+  const handleLinkClick = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
-    <nav 
+    <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled ? 'glass-panel py-3 shadow-lg' : 'bg-transparent py-6'
       }`}
@@ -36,12 +53,12 @@ const Navbar: React.FC = () => {
         <a href="#" className="text-2xl font-bold tracking-tighter text-white hover:text-primary transition-colors">
           bobgaynor<span className="text-primary">.dev</span>
         </a>
-        
+
         <div className="hidden md:flex space-x-8">
           {navLinks.map((link) => (
-            <a 
+            <a
               key={link.name}
-              href={link.href} 
+              href={link.href}
               className="text-sm font-medium text-slate-300 hover:text-primary transition-colors"
             >
               {link.name}
@@ -49,14 +66,33 @@ const Navbar: React.FC = () => {
           ))}
         </div>
 
-        {/* Mobile Menu Button Placeholder - Simple Implementation for brevity */}
         <button
           className="md:hidden text-white text-2xl focus:outline-none focus:ring-2 focus:ring-primary rounded"
           aria-label="Open navigation menu"
-          onClick={() => {/* Mobile menu functionality to be implemented */}}
+          onClick={toggleMobileMenu}
         >
-          ☰
+          {isMobileMenuOpen ? '✕' : '☰'}
         </button>
+      </div>
+
+      {/* Mobile Menu */}
+      <div
+        className={`md:hidden fixed top-0 left-0 w-full h-full bg-slate-900/90 backdrop-blur-sm z-40 transition-opacity duration-300 ${
+          isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+      >
+        <div className="flex flex-col items-center justify-center h-full space-y-8">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className="text-2xl font-semibold text-white hover:text-primary transition-colors"
+              onClick={handleLinkClick}
+            >
+              {link.name}
+            </a>
+          ))}
+        </div>
       </div>
     </nav>
   );
