@@ -1,0 +1,29 @@
+
+export interface Project {
+  id: number;
+  title: string;
+  description: string;
+  tags: string[];
+  imageUrl: string; // Serves as fallback or cover
+  link: string;
+}
+
+export interface FocusArea {
+  id: number;
+  title: string;
+  description: string;
+  iconPath: string;
+}
+
+export interface ChatMessage {
+  role: 'user' | 'model';
+  text: string;
+  timestamp: Date;
+  isError?: boolean;
+}
+
+export interface SocialLink {
+  platform: string;
+  url: string;
+  iconPath: string; // SVG path data
+}
