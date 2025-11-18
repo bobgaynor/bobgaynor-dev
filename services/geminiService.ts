@@ -1,27 +1,16 @@
-import { GoogleGenAI, Chat, GenerateContentResponse } from "@google/genai";
 import { SYSTEM_INSTRUCTION } from '../constants';
 
-// Initialize Gemini Client
-// Note: In a real production app, be careful exposing API keys in client-side code 
-// without strict referer restrictions or a backend proxy.
-const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY });
-
-let chatSession: Chat | null = null;
+let chatSession: any | null = null; // We'll need to redefine the Chat and GenerateContentResponse types or use 'any'
 
 /**
  * Initializes or retrieves the existing chat session.
  * Using a singleton pattern for the session to maintain history during the user's visit.
  */
-export const getChatSession = (): Chat => {
+export const getChatSession = (): any => {
   if (!chatSession) {
-    chatSession = ai.chats.create({
-      model: 'gemini-2.5-flash',
-      config: {
-        systemInstruction: SYSTEM_INSTRUCTION,
-        temperature: 0.7,
-        maxOutputTokens: 200,
-      },
-    });
+    // The chat session is now just a concept on the client-side
+    // The actual history will be managed by the backend if needed
+    chatSession = {}; 
   }
   return chatSession;
 };
@@ -31,9 +20,20 @@ export const getChatSession = (): Chat => {
  */
 export const sendMessageToGemini = async (message: string): Promise<string> => {
   try {
-    const chat = getChatSession();
-    const result: GenerateContentResponse = await chat.sendMessage({ message });
-    return result.text || "I'm sorry, I couldn't generate a response.";
+    const response = await fetch('/api/gemini', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ prompt: message }),
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to connect to the AI assistant.');
+    }
+
+    const data = await response.json();
+    return data.text || "I'm sorry, I couldn't generate a response.";
   } catch (error) {
     console.error("Gemini API Error:", error);
     throw new Error("Failed to connect to the AI assistant.");

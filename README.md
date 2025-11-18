@@ -15,6 +15,7 @@ Combining security expertise with machine learning to reveal hidden threat patte
 ## Technology Stack
 
 *   **Frontend:** React with TypeScript
+*   **Backend:** Firebase Cloud Functions
 *   **Build Tool:** Vite
 *   **Hosting:** Firebase Hosting
 *   **AI Integration:** Google Gemini API
@@ -33,21 +34,33 @@ To run this project locally, follow these steps:
     ```
 
 2.  **Install dependencies:**
+    This project has two separate `package.json` files. You'll need to install dependencies for both the root directory (for the frontend) and the `functions` directory (for the backend).
     ```bash
+    # Install frontend dependencies
     npm install
+
+    # Install backend dependencies
+    cd functions
+    npm install
+    cd ..
     ```
 
 3.  **Set up environment variables:**
-    Create a `.env.local` file in the root of the project and add your Gemini API key:
+    You will need to set your Gemini API key as an environment variable for the Cloud Function. You can do this by running the following command in your terminal, replacing `your-api-key-here` with your actual Gemini API key:
+    ```bash
+    firebase functions:config:set gemini.key="your-api-key-here"
     ```
-    VITE_API_KEY=your_api_key_here
+    You will also need to get the runtime configuration for your functions to be able to run the emulator.
+    ```bash
+    firebase functions:config:get > functions/.runtimeconfig.json
     ```
 
 4.  **Run the development server:**
+    It's recommended to use the Firebase emulator suite to run the frontend and backend locally.
     ```bash
-    npm run dev
+    firebase emulators:start
     ```
-    The site will be available at `http://localhost:5173`.
+    The site will be available at `http://localhost:4000`.
 
 ---
 
