@@ -58,6 +58,8 @@ const Projects: React.FC = () => {
 
                   <a 
                     href={featuredProject.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
                     className="inline-flex w-fit items-center px-6 py-3 rounded-lg bg-primary text-white font-semibold hover:bg-teal-600 transition-all shadow-lg shadow-primary/20"
                   >
                     View on GitHub
