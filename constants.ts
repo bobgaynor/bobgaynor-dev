@@ -64,27 +64,8 @@ export const SOCIAL_LINKS: SocialLink[] = [
   }
 ];
 
-export const SYSTEM_INSTRUCTION = `You are an AI assistant for ${PROFILE.name}'s portfolio website. 
-Your goal is to professionally and politely answer questions about ${PROFILE.name} based on the following information:
-- Role: ${PROFILE.role}
-- Bio: ${PROFILE.bio}
-- Location: ${PROFILE.location}
-- Skills: ${SKILLS.join(", ")}
-- Areas of Focus: ${FOCUS_AREAS.map(e => `${e.title}: ${e.description}`).join("; ")}
-- Projects: ${PROJECTS.map(p => `${p.title}: ${p.description}`).join("; ")}
-- Current Research: ${CURRENT_RESEARCH.title} - ${CURRENT_RESEARCH.description}
-
-If a user asks about specific past employment history, mention that Bob focuses on independent contracting and tool building now, but you can share his technical focus areas.
-Keep responses concise (under 100 words) unless asked for details. Be enthusiastic but professional.`;
-
 // UI Configuration Constants
 export const UI_CONFIG = {
   // Navbar
   NAVBAR_SCROLL_THRESHOLD: 50,
-
-  // Chat Widget
-  CHAT_WIDTH_MOBILE: '20rem', // w-80
-  CHAT_WIDTH_DESKTOP: '24rem', // w-96
-  CHAT_HEIGHT: '500px',
-  CHAT_MESSAGE_MAX_WIDTH: '80%',
 } as const;
