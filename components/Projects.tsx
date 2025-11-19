@@ -33,7 +33,10 @@ const Projects: React.FC = () => {
                       loading="lazy"
                       onError={(e) => {
                         e.currentTarget.style.display = 'none';
-                        e.currentTarget.parentElement!.style.background = 'linear-gradient(135deg, #0f766e 0%, #14b8a6 100%)';
+                        const parent = e.currentTarget.parentElement;
+                        if (parent) {
+                          parent.style.background = 'linear-gradient(135deg, #0f766e 0%, #14b8a6 100%)';
+                        }
                       }}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
