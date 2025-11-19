@@ -15,14 +15,6 @@ export interface FocusArea {
   iconPath: string;
 }
 
-export interface ChatMessage {
-  id: string;
-  role: 'user' | 'model';
-  text: string;
-  timestamp: Date;
-  isError?: boolean;
-}
-
 export interface SocialLink {
   platform: string;
   url: string;
