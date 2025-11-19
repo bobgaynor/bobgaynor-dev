@@ -145,11 +145,3 @@ firebase deploy --only hosting
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
----
-
-## Contact
-
-- **Website:** [bobgaynor.dev](https://bobgaynor.dev)
-- **Email:** bg@bobgaynor.dev
-- **GitHub:** [@bobgaynor](https://github.com/bobgaynor)
-- **LinkedIn:** [bobgaynor](https://www.linkedin.com/in/bobgaynor/)
