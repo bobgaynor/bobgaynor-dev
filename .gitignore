@@ -1,22 +1,23 @@
-# Logs
-*.log
-
 # Dependencies
 /node_modules
+/functions/node_modules
 
-# Environment variables
+# Build output
+/dist
+
+# Firebase
+.firebase
+*.log
+
+# Local env files
 .env
 .env.*
-!.env.example
 
-# IDE & Environment files
-.idea/
-.vscode/
-.idx/
-metadata.json
-
-# macOS files
+# IDE / OS files
 .DS_Store
-
-# Windows files
-Thumbs.db
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
