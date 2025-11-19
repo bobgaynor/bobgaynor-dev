@@ -22,7 +22,7 @@ Combining security expertise with machine learning to reveal hidden threat patte
 - **Performance:**
   - Optimized bundle size (~207 kB JS, ~17 kB CSS)
   - Build-time CSS extraction and purging
-  - Aggressive caching with service workers
+  - Aggressive caching via Firebase Hosting headers
 
 ---
 
