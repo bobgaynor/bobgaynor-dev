@@ -69,3 +69,14 @@ export const UI_CONFIG = {
   // Navbar
   NAVBAR_SCROLL_THRESHOLD: 50,
 } as const;
+
+// Z-Index Scale
+export const Z_INDEX = {
+  BACKGROUND: -10,
+  BASE: 0,
+  CONTENT: 10,
+  OVERLAY: 20,
+  MOBILE_MENU: 30,
+  NAVBAR: 40,
+  NAVBAR_BUTTON: 50,
+} as const;
