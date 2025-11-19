@@ -1,4 +1,4 @@
-name: Deploy to Firebase on merge
+name: Deploy to Firebase Hosting on merge
 'on':
   push:
     branches:
@@ -6,29 +6,12 @@ name: Deploy to Firebase on merge
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
-    env:
-      PROJECT_ID: bob-portfolio-478403
     steps:
-      - uses: actions/checkout@v4
-      
-      - name: Install root dependencies and build
-        run: |
-          npm ci
-          npm run build
-          
-      - name: Install functions dependencies
-        run: cd functions && npm ci
-        
-      - name: Install Firebase CLI
-        run: npm install -g firebase-tools
-        
-      - name: Authenticate with Google Cloud
-        uses: 'google-github-actions/auth@v2'
+      - uses: actions/checkout@v3
+      - run: npm ci && npm run build
+      - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          credentials_json: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_BOB_PORTFOLIO_478403 }}'
-
-      - name: Set Gemini API Key for Functions
-        run: firebase functions:config:set gemini.key="${{ secrets.GEMINI_API_KEY }}" --project $PROJECT_ID --non-interactive
-        
-      - name: Deploy to Firebase
-        run: firebase deploy --project $PROJECT_ID --non-interactive
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_BOB_PORTFOLIO_478403 }}'
+          channelId: live
+          projectId: bob-portfolio-478403
