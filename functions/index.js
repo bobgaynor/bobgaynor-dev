@@ -4,38 +4,51 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 admin.initializeApp();
 
-// Get your API key from environment variables
+// Get your API key from environment variables using functions.config()
+// This is the recommended way for Firebase Cloud Functions
 const API_KEY = functions.config().gemini.key;
 
-const genAI = new GoogleGenerativeAI(API_KEY);
+let genAI;
+try {
+  genAI = new GoogleGenerativeAI(API_KEY);
+} catch (error) {
+  console.error("Failed to initialize GoogleGenerativeAI, check your API key.", error);
+}
 
-exports.geminiProxy = functions.https.onRequest(async (req, res) => {
-  // Set CORS headers for preflight requests
-  res.set("Access-Control-Allow-Origin", "*");
-  res.set("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-  res.set("Access-Control-Allow-Headers", "Content-Type");
+exports.geminiProxy = functions.region('us-central1').https.onCall(async (data, context) => {
+  // Ensure the user is authenticated if you want to add security
+  // if (!context.auth) {
+  //   throw new functions.https.HttpsError('unauthenticated', 'The function must be called while authenticated.');
+  // }
 
-  if (req.method === "OPTIONS") {
-    res.status(204).send("");
-    return;
+  const { prompt, history } = data;
+
+  if (!prompt) {
+    throw new functions.https.HttpsError('invalid-argument', 'The function must be called with a "prompt".');
+  }
+
+  if (!genAI) {
+    throw new functions.https.HttpsError('internal', 'The AI model is not initialized. Check API Key configuration.');
   }
 
   try {
-    const { prompt } = req.body;
+    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
-    if (!prompt) {
-      return res.status(400).send({ error: "Prompt is required" });
-    }
+    const chat = model.startChat({
+      history: history || [],
+      generationConfig: {
+        maxOutputTokens: 2048,
+      },
+    });
 
-    const model = genAI.getGenerativeModel({ model: "gemini-pro"});
-    const result = await model.generateContent(prompt);
+    const result = await chat.sendMessage(prompt);
     const response = await result.response;
     const text = await response.text();
-
-    res.send({ text });
-
+    
+    return { text };
   } catch (error) {
     console.error("Error calling Gemini API:", error);
-    res.status(500).send({ error: "Failed to call Gemini API" });
+    // Throwing an HttpsError allows the client to receive a specific error code and message.
+    throw new functions.https.HttpsError('internal', 'Failed to call the Gemini API.', error.message);
   }
 });
