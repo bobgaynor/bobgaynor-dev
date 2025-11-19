@@ -28,14 +28,14 @@ Combining security expertise with machine learning to reveal hidden threat patte
 
 ## Features
 
-- ✨ Modern, responsive design with smooth animations
-- 🌙 Dark theme optimized for readability
-- 📱 Fully functional mobile navigation
-- ⚡ Optimized performance with lazy loading
-- 🔒 Security headers (CSP, HSTS, XSS protection)
-- ♿ Accessibility-focused with ARIA labels and keyboard navigation
-- 🎨 Custom scrollbar and signal animation effects
-- 📊 SEO optimized with Open Graph and Twitter Card meta tags
+- Modern, responsive design with smooth animations
+- Dark theme optimized for readability
+- Fully functional mobile navigation
+- Optimized performance with lazy loading
+- Security headers (CSP, HSTS, XSS protection)
+- Accessibility-focused with ARIA labels and keyboard navigation
+- Custom scrollbar and signal animation effects
+- SEO optimized with Open Graph and Twitter Card meta tags
 
 ---
 
@@ -145,11 +145,3 @@ firebase deploy --only hosting
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
----
-
-## Contact
-
-- **Website:** [bobgaynor.dev](https://bobgaynor.dev)
-- **Email:** bg@bobgaynor.dev
-- **GitHub:** [@bobgaynor](https://github.com/bobgaynor)
-- **LinkedIn:** [bobgaynor](https://www.linkedin.com/in/bobgaynor/)
