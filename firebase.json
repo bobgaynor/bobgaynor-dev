@@ -8,10 +8,6 @@
     ],
     "rewrites": [
       {
-        "source": "/api/gemini",
-        "function": "geminiProxy"
-      },
-      {
         "source": "**",
         "destination": "/index.html"
       }
@@ -83,8 +79,5 @@
         ]
       }
     ]
-  },
-  "functions": {
-    "source": "functions"
   }
 }
