@@ -46,7 +46,7 @@ export const PROJECTS: Project[] = [
     title: "CTA: Cyber Threat Analysis",
     description: "A reproducible machine-learning pipeline built to detect brute-force activity using structured log parsing, enrichment, feature engineering, and baseline modeling. Designed to show how data-driven workflows improve traditional analysis and provide a foundation for future predictive detection work.",
     tags: ["Cybersecurity", "Threat Intel", "Automation", "ML"],
-    imageUrl: "https://images.unsplash.com/photo-1494522855154-9297ac14b55f?auto=format&fit=crop&q=80&w=1200", // Verified Cloud Gate (The Bean) Image
+    imageUrl: "el.jpg",
     link: "https://github.com/bobgaynor/cta"
   }
 ];
