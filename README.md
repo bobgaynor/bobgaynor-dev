@@ -8,7 +8,7 @@ A modern, responsive portfolio website showcasing my skills and projects, with a
 
 ## Description
 
-Combining my security expertise with machine learning to reveal hidden patterns in noisy security data and move detection toward predictive intelligence.
+Combining security expertise with machine learning to uncover hidden patterns in noisy data and move detection toward predictive intelligence.
 
 ---
 
