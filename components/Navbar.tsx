@@ -60,7 +60,7 @@ const Navbar: React.FC = () => {
               <a 
                 key={link.name}
                 href={link.href} 
-                className="text-sm font-medium text-slate-300 hover:text-primary transition-colors"
+                className="text-base font-medium text-slate-300 hover:text-primary transition-colors"
               >
                 {link.name}
               </a>
