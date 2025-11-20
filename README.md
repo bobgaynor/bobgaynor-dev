@@ -134,10 +134,10 @@ firebase deploy --only hosting
 
 ## Browser Support
 
-- Chrome/Edge (last 2 versions)
-- Firefox (last 2 versions)
-- Safari (last 2 versions)
-- Mobile browsers (iOS Safari, Chrome Mobile)
+- Chrome/Edge
+- Firefox
+- Safari
+- iOS Safari and Chrome Mobile
 
 ---
 
