@@ -1,4 +1,4 @@
-# bobgaynor.dev - Personal Portfolio
+# bobgaynor.dev
 
 A modern, responsive portfolio website showcasing my skills and projects, with a focus on combining security expertise with machine learning.
 
@@ -8,7 +8,7 @@ A modern, responsive portfolio website showcasing my skills and projects, with a
 
 ## Description
 
-Combining security expertise with machine learning to reveal hidden threat patterns and move detection toward predictive intelligence.
+Combining my security expertise with machine learning to reveal hidden patterns in noisy security data and move detection toward predictive intelligence.
 
 ---
 
