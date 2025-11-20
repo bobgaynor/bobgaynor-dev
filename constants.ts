@@ -43,8 +43,8 @@ export const FOCUS_AREAS: FocusArea[] = [
 export const PROJECTS: Project[] = [
   {
     id: 1,
-    title: "CTA: Cyber Threat Analysis",
-    description: "A reproducible machine-learning pipeline built to detect brute-force activity using structured log parsing, enrichment, feature engineering, and baseline modeling. Designed to show how data-driven workflows improve traditional analysis and provide a foundation for future predictive detection work.",
+    title: "Cyber Threat Analyzer (CTA)",
+    description: "A reproducible machine-learning pipeline built to detect brute-force activity using structured log parsing, enrichment, feature engineering, and baseline modeling. Designed to demonstrate how data-driven workflows strengthen traditional analysis and provide a foundation for future predictive detection work.",
     tags: ["Cybersecurity", "Threat Intel", "Automation", "ML"],
     imageUrl: "el.jpg",
     link: "https://github.com/bobgaynor/cta"

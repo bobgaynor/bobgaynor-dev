@@ -13,10 +13,10 @@ const About: React.FC = () => {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 uppercase">
-            CORE CAPABILITIES
+            CAPABILITIES
           </h2>
           <p className="text-slate-400 text-lg leading-relaxed">
-             Bringing together structured cybersecurity analysis and data-driven modeling to uncover meaningful patterns in noisy operational data.
+             Applying structured analysis and machine-learning workflows to uncover meaningful patterns hidden in noisy operational data.
           </p>
         </div>
 
