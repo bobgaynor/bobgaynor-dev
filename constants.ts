@@ -5,18 +5,7 @@ export const PROFILE = {
   name: "Bob Gaynor",
   role: "Senior Full Stack Engineer",
   bio: "Combining security expertise with machine learning to reveal hidden threat patterns and move detection toward predictive intelligence.",
-  location: "San Francisco, CA",
   email: "bg@bobgaynor.dev"
-};
-
-export const SKILLS = [
-  "Python", "TensorFlow", "PyTorch", "LangChain", "TypeScript", 
-  "React", "PostgreSQL", "AWS Security", "Docker", "Wireshark"
-];
-
-export const CURRENT_RESEARCH = {
-  title: "Adversarial Robustness in NIDS",
-  description: "Investigating gradient-based evasion attacks against deep learning-based Network Intrusion Detection Systems (NIDS) and developing defensive distillation techniques to improve model resilience."
 };
 
 export const FOCUS_AREAS: FocusArea[] = [
