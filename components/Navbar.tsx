@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { UI_CONFIG, Z_INDEX } from '../constants';
+import { UI_CONFIG, Z_INDICES } from '../constants';
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -48,7 +48,7 @@ const Navbar: React.FC = () => {
         className={`fixed top-0 left-0 right-0 transition-all duration-300 ${
           scrolled ? 'glass-panel py-3 shadow-lg' : 'bg-transparent py-6'
         }`}
-        style={{ zIndex: Z_INDEX.NAVBAR }}
+        style={{ zIndex: Z_INDICES.NAVBAR }}
       >
         <div className="container mx-auto px-6 flex justify-between items-center">
           <a href="#" className="text-2xl font-bold tracking-tighter text-white hover:text-primary transition-colors">
@@ -69,7 +69,7 @@ const Navbar: React.FC = () => {
 
           <button
             className="md:hidden text-white text-2xl focus:outline-none focus:ring-2 focus:ring-primary rounded relative"
-            style={{ zIndex: Z_INDEX.NAVBAR_BUTTON }}
+            style={{ zIndex: Z_INDICES.NAVBAR_BUTTON }}
             aria-label="Open navigation menu"
             onClick={toggleMobileMenu}
           >
@@ -83,7 +83,7 @@ const Navbar: React.FC = () => {
         className={`md:hidden fixed top-0 left-0 w-full h-full bg-slate-900/90 backdrop-blur-sm transition-opacity duration-300 ${
           isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
-        style={{ zIndex: Z_INDEX.MOBILE_MENU }}
+        style={{ zIndex: Z_INDICES.MOBILE_MENU }}
       >
         <div className="flex flex-col items-center justify-center h-full space-y-8">
           {navLinks.map((link) => (

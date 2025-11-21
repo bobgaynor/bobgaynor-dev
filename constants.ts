@@ -71,7 +71,7 @@ export const UI_CONFIG = {
 } as const;
 
 // Z-Index Scale
-export const Z_INDEX = {
+export const Z_INDICES = {
   BACKGROUND: -10,
   BASE: 0,
   CONTENT: 10,
