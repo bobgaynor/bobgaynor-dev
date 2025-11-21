@@ -44,7 +44,7 @@ export const PROJECTS: Project[] = [
   {
     id: 1,
     title: "Cyber Threat Analyzer (CTA)",
-    description: "A reproducible machine-learning pipeline built to detect brute-force activity using structured log parsing, enrichment, feature engineering, and baseline modeling. Designed to demonstrate how data-driven workflows strengthen traditional analysis and provide a foundation for future predictive detection work.",
+    description: "A reproducible machine-learning pipeline that finds the signal hidden in noisy log data. Demonstrated using brute-force detection through structured parsing, enrichment, feature engineering, and baseline modeling. Designed to show how data-driven workflows produce actionable intelligence and support future predictive detection work.",
     tags: ["Cybersecurity", "Threat Intel", "Automation", "ML"],
     imageUrl: "el.jpg",
     link: "https://github.com/bobgaynor/cta"
