@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
   const navLinks = [
     { name: 'Capabilities', href: '#focus' },
     { name: 'Featured', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Connect', href: '#contact' },
   ];
 
   const handleLinkClick = () => {
