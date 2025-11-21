@@ -7,7 +7,6 @@ const Contact: React.FC = () => {
     <section id="contact" className="py-24 bg-secondary border-t border-slate-800">
       <div className="container mx-auto px-6">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-12">Get In Touch</h2>
           
           <div className="flex justify-center items-center gap-10 mb-10">
              {/* Social Links */}

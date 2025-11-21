@@ -12,7 +12,7 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-6 text-center" style={{ zIndex: Z_INDEX.CONTENT }}>
         {/* Reduced mb-6 to mb-2 to close the gap. Kept py-4 to prevent animation clipping on Chrome. */}
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-2 leading-relaxed py-4">
-          Finding the <span className="signal-text">signal</span>
+          Finding the <span className="signal-text">Signal</span>
         </h1>
         
         <p className="max-w-2xl mx-auto text-lg md:text-xl text-slate-400 mb-10 leading-relaxed">
