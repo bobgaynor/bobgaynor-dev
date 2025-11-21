@@ -1,15 +1,15 @@
 
 import React from 'react';
-import { PROFILE, Z_INDEX } from '../constants';
+import { PROFILE, Z_INDICES } from '../constants';
 
 const Hero: React.FC = () => {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Background Elements */}
-      <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/20 rounded-full blur-3xl animate-pulse" style={{ zIndex: Z_INDEX.BACKGROUND }}></div>
-      <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-teal-600/10 rounded-full blur-3xl" style={{ zIndex: Z_INDEX.BACKGROUND }}></div>
+      <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/20 rounded-full blur-3xl animate-pulse" style={{ zIndex: Z_INDICES.BACKGROUND }}></div>
+      <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-teal-600/10 rounded-full blur-3xl" style={{ zIndex: Z_INDICES.BACKGROUND }}></div>
 
-      <div className="container mx-auto px-6 text-center" style={{ zIndex: Z_INDEX.CONTENT }}>
+      <div className="container mx-auto px-6 text-center" style={{ zIndex: Z_INDICES.CONTENT }}>
         {/* Reduced mb-6 to mb-2 to close the gap. Kept py-4 to prevent animation clipping on Chrome. */}
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-2 leading-relaxed py-4">
           Finding the <span className="signal-text">Signal</span>
