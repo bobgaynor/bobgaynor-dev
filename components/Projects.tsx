@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { PROJECTS, Z_INDICES } from '../constants';
+import { PROJECTS, Z_INDEX } from '../constants';
 
 const Projects: React.FC = () => {
   // We are only displaying the first project since it is the single featured one
@@ -11,9 +11,9 @@ const Projects: React.FC = () => {
   return (
     <section id="projects" className="py-24 bg-dark relative">
        {/* Background Glow */}
-       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" style={{ zIndex: Z_INDICES.BASE }}></div>
+       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" style={{ zIndex: Z_INDEX.BASE }}></div>
 
-      <div className="container mx-auto px-6 relative" style={{ zIndex: Z_INDICES.CONTENT }}>
+      <div className="container mx-auto px-6 relative" style={{ zIndex: Z_INDEX.CONTENT }}>
         <div className="flex flex-col items-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 uppercase">Featured Project</h2>
           <div className="w-24 h-1 bg-primary rounded-full"></div>
@@ -26,7 +26,7 @@ const Projects: React.FC = () => {
               <div className="flex flex-col md:flex-row h-full">
                 {/* Image Side */}
                 <div className="md:w-2/5 h-64 md:h-auto overflow-hidden relative bg-slate-950">
-                   <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors" style={{ zIndex: Z_INDICES.OVERLAY }}></div>
+                   <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors" style={{ zIndex: Z_INDEX.OVERLAY }}></div>
                    <img
                       src={featuredProject.imageUrl}
                       alt={`Cover image for ${featuredProject.title} project`}
