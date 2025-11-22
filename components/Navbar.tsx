@@ -80,8 +80,8 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden fixed top-0 left-0 w-full h-full bg-slate-900/90 backdrop-blur-sm transition-opacity duration-300 ${
-          isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        className={`md:hidden fixed top-0 left-0 w-full h-full bg-slate-900/90 backdrop-blur-sm transition-transform duration-300 ease-in-out ${
+          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full pointer-events-none'
         }`}
         style={{ zIndex: Z_INDICES.MOBILE_MENU }}
       >
