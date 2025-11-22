@@ -19,7 +19,6 @@ const App: React.FC = () => {
             <Projects />
             <Contact />
           </>} />
-          <Route path="/google2d28759af1d84347.html" />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

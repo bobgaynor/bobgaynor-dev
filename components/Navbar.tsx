@@ -51,7 +51,7 @@ const Navbar: React.FC = () => {
         style={{ zIndex: Z_INDICES.NAVBAR }}
       >
         <div className="container mx-auto px-6 flex justify-between items-center">
-          <a href="#" className="text-2xl font-bold tracking-tighter text-white hover:text-primary transition-colors">
+          <a href="/" className="text-2xl font-bold tracking-tighter text-white hover:text-primary transition-colors">
             bobgaynor<span className="text-primary">.dev</span>
           </a>
           
